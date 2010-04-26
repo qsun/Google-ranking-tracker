@@ -1,0 +1,46 @@
+#!C:\Program Files\ActiveState Perl Dev Kit 8.2.1\bin\perlapp-gui.exe
+PAP-Version: 1.0
+Packer: C:\Program Files\ActiveState Perl Dev Kit 8.2.1\bin\perlapp.exe
+Script: main.pl
+Cwd: Z:\
+Add: warnings
+Add: Thread::Queue
+Add: DBI
+Add: DBD::SQLite
+Add: KeywordStore
+Add: Misc
+Add: threads
+Add: Data::Dumper
+Add: WWW::Search::Scrape
+Add: FreezeThaw
+Byref: 0
+Clean: 0
+Date: 2010-04-26 19:22:36
+Debug: 
+Dependent: 0
+Dyndll: 0
+Exe: main.exe
+Force: 0
+Gui: 0
+Hostname: 7600c76b90704a6
+Manifest: 
+No-Compress: 0
+No-Gui: 0
+No-Logo: 1
+Runlib: 
+Shared: none
+Singleton: 0
+Tmpdir: 
+Verbose: 0
+Version-Comments: 
+Version-CompanyName: ParDiff
+Version-FileDescription: 
+Version-FileVersion: 0.1
+Version-InternalName: Digger
+Version-LegalCopyright: 
+Version-LegalTrademarks: 
+Version-OriginalFilename: ParDiff Keyword Tracker
+Version-ProductName: ParDiff Keyword Tracker
+Version-ProductVersion: 0.1
+Warnings: 0
+Xclude: 0
