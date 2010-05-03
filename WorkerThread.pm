@@ -21,8 +21,9 @@ sub start_worker($)
         my $result = search({engine => 'google',
                              frontpage => 'http://www.google.com.au',
                              keyword => $keyword,
-                             results => 10});
+                             results => 50});
         my $rank = 0;
+
         foreach my $item (@{$result->{results}}) {
             $rank++;
             if ($item =~ $domain) {
@@ -30,6 +31,8 @@ sub start_worker($)
                 next TOP;
             }
         }
+
+        print $rank, "\n";
 
         $KeywordProtocol::q_worker_main->enqueue(freeze({rank => -1, keyword => $keyword}));
     }
