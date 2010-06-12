@@ -21,7 +21,7 @@ sub start_worker($)
         my $result = search({engine => 'google',
                              frontpage => 'http://www.google.com.au',
                              keyword => $keyword,
-                             results => 50});
+                             results => 100});
         my $rank = 0;
 
         foreach my $item (@{$result->{results}}) {
