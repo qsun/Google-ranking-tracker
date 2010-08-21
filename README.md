@@ -6,6 +6,20 @@ Usage
 
 perl main.pl
 
+Screenshots
+-----------
+
+### Settings
+![Settings Screenshot](http://github.com/qsun/Google-ranking-tracker/raw/master/screen-history.png)
+
+### Running interface
+![Running Screenshot](http://github.com/qsun/Google-ranking-tracker/raw/master/screen-interface.png)
+
+### History record
+![History record](http://github.com/qsun/Google-ranking-tracker/raw/master/screen-history.png
+
+### Mac OS 
+![Mac OS](http://github.com/qsun/Google-ranking-tracker/raw/master/screen-mac-os.png)
 
 Download
 --------
