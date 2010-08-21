@@ -25,8 +25,10 @@ sub start_worker($)
         my $rank = 0;
 
         foreach my $item (@{$result->{results}}) {
+		warn('domain: ' . $domain . ' result: ' . $item);
             $rank++;
-            if ($item =~ $domain) {
+            if ($item =~ /$domain/i) {
+		    warn('match: ' . $rank . ' keyword: ' . $keyword);
                 $KeywordProtocol::q_worker_main->enqueue(freeze({rank =>$rank, keyword => $keyword}));
                 next TOP;
             }
@@ -34,7 +36,7 @@ sub start_worker($)
 
         print $rank, "\n";
 
-        $KeywordProtocol::q_worker_main->enqueue(freeze({rank => -1, keyword => $keyword}));
+        $KeywordProtocol::q_worker_main->enqueue(freeze({rank => 1000, keyword => $keyword}));
     }
 }
 

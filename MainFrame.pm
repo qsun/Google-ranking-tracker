@@ -137,10 +137,11 @@ sub rank_timer_evt {
     my ($self, $event) = @_;
     my $result = $KeywordProtocol::q_worker_main->dequeue_nb();
     
-    # warn "Got a result\n";
         
     if ($result) {
+    warn "Got a result\n";
         my @results = thaw($result);
+warn 'Results: ' . Dumper(\@results);
         my $rank = $results[0];
 
         if ($self->{status} eq 'running') {
@@ -303,7 +304,10 @@ sub set_keyword_google_ranks {
 
     KeywordStore::set_ranks($dbh, $rank->{keyword}, Misc::get_current_date(), 'google', $rank->{rank});
 
-    if ((!$self->{rank_info}{$keyword})  || ($self->{rank_info}{$keyword} < $rank->{rank})) {
+    warn 'current rank info: ' . Dumper($self->{rank_info});
+
+    if ((!$self->{rank_info}{$keyword})  || ($self->{rank_info}{$keyword} <= 0) || ($self->{rank_info}{$keyword} > $rank->{rank})) {
+	    warn('updated');
         $self->{rank_info}{$keyword} = $rank->{rank};
     }
 }
